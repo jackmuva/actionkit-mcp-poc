@@ -3,12 +3,10 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import jwt from "jsonwebtoken"
 
-const USER_AGENT = "actionkit-app/1.0";
-
 //helper functions
 async function getActions<T>(jwt: string): Promise<T | null> {
 	try {
-		const response = await fetch("https://actionkit.useparagon.com/projects/" + process.env.NEXT_PUBLIC_PARAGON_PROJECT_ID + "/actions", {
+		const response = await fetch("https://actionkit.useparagon.com/projects/" + process.env.PARAGON_PROJECT_ID + "/actions", {
 			method: "GET",
 			headers: { "Content-Type": "application/json", "Authorization": "Bearer " + jwt },
 		});

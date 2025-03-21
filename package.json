@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && chmod 755 build/index.js"
+    "build": "dotenv -e .env tsc && dotenv -e .env chmod 755 build/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
     "@types/jsonwebtoken": "^9.0.9",
+    "dotenv-cli": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "zod": "^3.24.2"
   },
